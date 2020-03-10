@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Plotpaint - GCODE from Javascript</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div id="infozone"></div>
+		<ol>
+			<li>Press to create:
+				<button onclick="pp.grid()">Grid</button> | 
+				<button onclick="pp.sines()">Sine Lines</button> | 
+				<button onclick="pp.rotalines()">RotaLines</button> | 
+				<button onclick="pp.rotapoly( 3 )">RotaFaces 3</button> | 
+				<button onclick="pp.rotapoly( 4 )">RotaFaces 4</button> | 
+				<button onclick="pp.rotapoly( 5 )">RotaFaces 5</button> | 
+				<button onclick="pp.rotapoly( 6 )">RotaFaces 6</button> | 
+				<button onclick="pp.spiral()">Spiral</button> | 
+				<button onclick="pp.corners()">CalibCorners</button> | 
+			</li>
+			<li>Or choose a JPEG file: <input type="file" name="image" onchange="pp.readimage( event )" /> and create 
+				<button onclick="pp.pic_lineart()">Line Art</button>
+				<button onclick="pp.pic_pixelize()">Pixelize</button>
+				<button onclick="pp.pic_sawtoothV()">sawtoothV</button>
+			</li>
+			<li>Then copy and paste the highlighted code:</li>
+		</ol>
+		<div id="canvasbox" style="left: 410px; position: absolute; height: 200px; width:200px;">
+			<canvas id="mycanvas" width="200" height="200" style="border: 1px solid black;" ></canvas>
+		</div>
+		<div id="gcode" style="width:400px;height:200px;overflow-y: scroll;"></div>
+		<div>
+			<canvas id="preview" width="1000" height="1000" style="border:1px solid gray;"></canvas>
+		</div>
+		<script type="text/javascript" src="basic.js"></script>
+	</body>
+</html>
